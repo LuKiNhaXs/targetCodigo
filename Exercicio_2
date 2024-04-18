@@ -1,0 +1,36 @@
+package desafio;
+import java.util.Scanner;
+
+public class Dois {
+
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+		// Definindo o número
+        System.out.print("Insira o número a ser verificado na sequência de Fibonacci: ");
+        int numero = scanner.nextInt();
+        
+        scanner.close();
+
+		// Calculando a sequênci até o número informado
+		int a = 0, b = 1, c;
+		boolean pertence = false;
+
+		while (a <= numero) {
+			if (a == numero) {
+				pertence = true;
+		        break;
+				}
+				c = a + b;
+				a = b;
+				b = c;
+		}
+
+		// Verificando se o número pertence à sequência
+		if (pertence) {
+			System.out.println(numero + " pertence a sequencia de Fibonacci.");
+		} else {
+			System.out.println(numero + " nao pertence a sequencia de Fibonacci.");
+		}
+	}
+}
