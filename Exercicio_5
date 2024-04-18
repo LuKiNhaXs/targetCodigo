@@ -1,0 +1,36 @@
+package desafio;
+import java.util.Scanner;
+
+public class Cinco {
+	
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar texto
+        System.out.print("Digite uma string para inverter: ");
+        String texto = scanner.nextLine();
+
+        // Invertendo a string
+        String textoInvertido = inverterTexto(texto);
+
+        // Exibindo a string invertida
+        System.out.println("String invertida: " + textoInvertido);
+
+        scanner.close();
+    }
+
+    // Função para inverter a string
+    public static String inverterTexto(String str) {
+        char[] caracteres = str.toCharArray();
+        int tamanho = caracteres.length;
+
+        // Trocar os caracteres correspondentes
+        for (int i = 0; i < tamanho / 2; i++) {
+            char t = caracteres[i];
+            caracteres[i] = caracteres[tamanho - i - 1];
+            caracteres[tamanho - i - 1] = t;
+        }
+
+        return new String(caracteres);
+    }
+}
